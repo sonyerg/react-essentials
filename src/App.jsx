@@ -1,4 +1,5 @@
-import reactImg from "./assets/react-core-concepts.png";
+import CoreConcepts from "./components/CoreConcept/CoreConcept";
+import Header from "./components/Header/Header";
 import { CORE_CONCEPTS } from "./data";
 
 // The idea behind JSX is that you have an easier time defining the
@@ -7,41 +8,6 @@ import { CORE_CONCEPTS } from "./data";
 // Your JSX code leads to a tree-like code structure that "tells" React how the different
 // components are related and how the UI should look like. It then executes appropriate
 // commands to manipulate the real DOM to reflect that target structure / code.
-
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-// {} are for dynamic values
-
-function Header() {
-  const descriptions = reactDescriptions[genRandomInt(2)];
-
-  return (
-    <header>
-      <img src={reactImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {descriptions} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-// props are "custom HTML attributes" set on components
-function CoreConcepts({ image, title, description }) {
-  // use object destructuring to props
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  );
-}
 
 function App() {
   return (
