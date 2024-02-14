@@ -28,21 +28,27 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcepts
+            {/* <CoreConcepts
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             />
-            {/*shortcut! */}
+            shortcut! 
             <CoreConcepts {...CORE_CONCEPTS[1]} />
             <CoreConcepts {...CORE_CONCEPTS[2]} />
-            <CoreConcepts {...CORE_CONCEPTS[3]} />
+            <CoreConcepts {...CORE_CONCEPTS[3]} /> */}
+
+            {/* Generate list output dynamically! */}
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcepts key={conceptItem.title} {...conceptItem} />
+            ))}
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
             <TapButton
+              isSelected={selectedTopic === "components"}
               onSelect={function () {
                 handleSelect("components");
               }}
@@ -50,6 +56,7 @@ function App() {
               Components
             </TapButton>
             <TapButton
+              isSelected={selectedTopic === "jsx"}
               onSelect={() => {
                 handleSelect("jsx");
               }}
@@ -57,6 +64,7 @@ function App() {
               JSX
             </TapButton>
             <TapButton
+              isSelected={selectedTopic === "props"}
               onSelect={() => {
                 handleSelect("props");
               }}
@@ -64,6 +72,7 @@ function App() {
               Props
             </TapButton>
             <TapButton
+              isSelected={selectedTopic === "state"}
               onSelect={() => {
                 handleSelect("state");
               }}
