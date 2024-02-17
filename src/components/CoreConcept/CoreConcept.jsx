@@ -1,7 +1,7 @@
 import "./CoreConcept.css";
 
 // props are "custom HTML attributes" set on components
-export default function CoreConcepts({ image, title, description }) {
+export default function CoreConcept({ image, title, description }) {
   // use object destructuring to props
   return (
     <li>
