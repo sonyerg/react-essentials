@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Tabs({ buttons, children, ButtonsContainer }) {
+export default function Tabs({ buttons, children, ButtonsContainer = "menu" }) {
   // set two different slot in tab component
   //   const ButtonsContainer = buttonsContainer;
   return (
